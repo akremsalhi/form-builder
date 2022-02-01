@@ -1,0 +1,111 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    body {
+        @apply !bg-slate-100
+    }
+}
+
+@layer components {
+
+
+    /* Form Group */
+    .form-group {
+        /* @apply xl:w-96 lg:w-96 */
+        @apply block w-full;
+    }
+
+
+    .form-group .is-required {
+        @apply ml-2 text-center text-red-600 font-bold align-sub
+    }
+
+    .form-group .form-feedback {
+        @apply text-xs text-gray-400 font-medium
+    }
+    
+    .form-group .form-label {
+        @apply inline-block text-gray-700
+    }
+
+    .form-group .input-group {
+        @apply flex justify-between relative
+    }
+
+    /* Form Control */
+    .form-control {
+        @apply block relative w-full invalid:pr-8
+        text-base font-normal text-gray-700
+        bg-white bg-clip-padding
+        border-solid border-gray-300 rounded
+        transition ease-in-out
+        focus:text-gray-700 focus:bg-white 
+        focus:border-blue-600 focus:outline-none border-2 disabled:border-gray-100;
+    }
+
+    /* Form Switch */
+
+    .form-switch {
+        @apply pl-0 flex gap-2 items-end;
+    }
+
+    .form-switch .form-check-input {
+        @apply  appearance-none w-9 h-5 rounded-full float-left align-top bg-gray-200 bg-no-repeat bg-contain focus:outline-none focus:ring-0 focus:ring-white cursor-pointer shadow-sm filter-none border-none;
+        background-position: left center !important;
+    }
+    .form-switch .form-check-input:checked {
+        @apply bg-blue-600;
+        background-position: right center !important;
+    }
+
+    .form-check-label {
+        @apply form-label flex justify-center items-center;
+    }
+
+    /* Tabs */
+
+    .tabs {
+        @apply nav-tabs flex flex-col md:flex-row flex-wrap list-none border-b-0 pl-0 mb-4
+    }
+
+    .tab-item-link {
+        @apply nav-link block font-medium text-xs leading-tight uppercase border-x-0 border-t-0 border-b-2 border-transparent px-6 py-3 my-2 hover:border-transparent hover:bg-gray-100 focus:border-transparent
+    }
+
+    .nav-tabs .nav-link.active {
+        border-color: #2563eb !important;
+    }
+
+    /* DatePicker */
+    .input-datepicker {
+        @apply form-control pl-12
+    }
+
+    .input-icon {
+        @apply z-10 absolute top-0 left-2 h-full pointer-events-none
+    }
+
+    /* Button style */
+    .loader {
+        @apply inline-block rounded-full
+    }
+
+    /* Button style */
+    .btn {
+        @apply inline-block h-max px-6 py-2.5 font-medium text-xs leading-tight uppercase rounded shadow-md hover:shadow-lg focus:shadow-lg focus:outline-none focus:ring-0 active:shadow-lg transition duration-150 ease-in-out w-max disabled:cursor-not-allowed
+    }
+
+    .btn-primary {
+        @apply bg-blue-600 text-white hover:bg-blue-700 focus:bg-blue-700 active:bg-blue-800 disabled:bg-blue-200
+    }
+
+    .btn-secondary {
+        @apply bg-purple-600 text-white hover:bg-purple-700 focus:bg-purple-700 active:bg-purple-800  disabled:bg-purple-200
+    }
+
+    .btn-danger {
+        @apply bg-red-600 text-white hover:bg-red-700 focus:bg-red-700 active:bg-red-800  disabled:bg-red-200
+    }
+}
