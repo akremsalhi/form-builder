@@ -3,12 +3,13 @@ import Head from "next/head";
 import Script from 'next/script';
 import Fetch from "../components/api/Fetch";
 import { FormArray, FormFetch } from "../components/Context/FormFetch";
-import { FormPrimaryButton } from "../components/UI/Forms/Form";
+import { FormField, FormPrimaryButton } from "../components/UI/Forms/Form";
 import Icon from "../components/UI/Icon";
-import FormModels from "./components/FormModels";
+import FormFields from "./components/FormFields";
 
 import { IoLogoLaravel, IoLogoReact, IoCodeDownloadOutline } from 'react-icons/io5'
 import GettingStarted from "./components/GettingStarted";
+import FormModels from "./components/FormModels";
 
 
 export default function Home() {
@@ -29,7 +30,7 @@ export default function Home() {
 
           <Heading>Laravel React Form builder</Heading>
 
-          <Tabs className="mt-6">
+          <Tabs className="mt-6" defaultIndex={1}>
             <TabList>
               <Tab>Start Project</Tab>
               <Tab><Flex justifyContent='center' justifyItems='center' gap={1}><div><IoLogoLaravel className='w-full h-full' /></div> <div>Laravel</div></Flex></Tab>
@@ -37,23 +38,16 @@ export default function Home() {
             </TabList>
 
             <TabPanels>
-              
+
               <TabPanel>
-              <GettingStarted/>
+                <GettingStarted />
               </TabPanel>
               <TabPanel>
                 <Fetch endpoint="/api/laravel">
                   {(data) => {
                     return (
                       <FormFetch action="/api/laravel" data={data}>
-                        {({ loading }) => {
-                          return (
-                            <>
-                              <FormModels models={data.models} />
-                              <Button type="submit" className="mt-2" isLoading={loading}>Submit</Button>
-                            </>
-                          )
-                        }}
+                        {(form) => <FormModels form={form} models={data.models} />}
                       </FormFetch>
                     )
                   }}
@@ -65,9 +59,6 @@ export default function Home() {
               </TabPanel>
             </TabPanels>
           </Tabs>
-
-
-          {/* <h1 className="text-3xl mb-4 text-center italic font-bold">Form</h1> */}
 
         </div>
       </main>

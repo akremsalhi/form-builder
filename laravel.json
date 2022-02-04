@@ -1,1 +1,377 @@
-{"models":[{"namespace":"App\\Models","name":"User","softDelete":false,"attributes":{},"relationships":[{"name":"posts","type":"hasMany","class":"Post","arguments":[]}],"fields":[{"name":"name","type":"string","arguments":[],"options":[]},{"name":"password","type":"string","arguments":[],"options":[]},{"name":"email","type":"string","arguments":[],"options":[{"key":"unique","arguments":[]}]},{"name":"","type":"rememberToken","arguments":[],"options":[]}],"controller":{"namespace":"App\\Http\\Controllers","actions":[{"name":"index","method":"get","route":{"middleware":["auth:sanctum"]},"params":[{"class":"Request","namespace":"Illuminate\\Http\\Request","name":"request"}]},{"name":"create","method":"get","route":{"middleware":["auth:sanctum"]},"params":[]},{"name":"store","method":"post","route":{"middleware":["auth:sanctum"]},"params":[{"class":"StoreUserRequest","namespace":"App\\Http\\Requests\\StoreUserRequest","name":"request"}],"request":{},"response":{}},{"name":"show","method":"get","route":{"middleware":["auth:sanctum"]},"params":[{"class":"User","namespace":"App\\Models\\User","name":"user"}]},{"name":"edit","method":"get","route":{"middleware":["auth:sanctum"]},"params":[{"class":"User","namespace":"App\\Models\\User","name":"user"}]},{"name":"update","method":"put","route":{"middleware":["auth:sanctum"]},"params":[{"class":"UpdateUserRequest","namespace":"App\\Http\\Requests\\UpdateUserRequest","name":"request"},{"class":"User","namespace":"App\\Models\\User","name":"user"}],"request":{},"response":{}},{"name":"destroy","method":"delete","route":{"middleware":["auth:sanctum"]},"params":[{"class":"User","namespace":"App\\Models\\User","name":"user"}],"request":{"rules":{}},"response":{}}]}},{"namespace":"App\\Models","name":"Post","softDelete":false,"attributes":{},"relationships":[{"name":"author","type":"belongsTo","class":"User","arguments":[]}],"fields":[{"name":"title","type":"string","arguments":[],"options":[]},{"name":"content","type":"text","arguments":[],"options":[]},{"name":"published","type":"boolean","arguments":[],"options":[{"key":"default","arguments":[false]},{"key":"default","arguments":[false]}]},{"name":"user_id","type":"foreignId","arguments":[],"options":[{"key":"constrained","arguments":[]}]}],"controller":{"namespace":"App\\Http\\Controllers","actions":[{"name":"index","method":"get","route":{"middleware":["auth:sanctum"]},"params":[{"class":"Request","namespace":"Illuminate\\Http\\Request","name":"request"}]},{"name":"create","method":"get","route":{"middleware":["auth:sanctum"]},"params":[]},{"name":"store","method":"post","route":{"middleware":["auth:sanctum"]},"params":[{"class":"StorePostRequest","namespace":"App\\Http\\Requests\\StorePostRequest","name":"request"}],"request":{"rules":{}}},{"name":"show","method":"get","route":{"middleware":["auth:sanctum"]},"params":[{"class":"Post","namespace":"App\\Models\\Post","name":"post"}]},{"name":"edit","method":"get","route":{"middleware":["auth:sanctum"]},"params":[{"class":"Post","namespace":"App\\Models\\Post","name":"post"}]},{"name":"update","method":"put","route":{"middleware":["auth:sanctum"]},"params":[{"class":"UpdatePostRequest","namespace":"App\\Http\\Requests\\UpdatePostRequest","name":"request"},{"class":"Post","namespace":"App\\Models\\Post","name":"post"}],"request":{"rules":{}},"response":{}},{"name":"destroy","method":"delete","route":{"middleware":["auth:sanctum"]},"params":[{"class":"Post","namespace":"App\\Models\\Post","name":"post"}],"request":{},"response":{}}]}}],"env":{"appname":"Laravel","dbname":"laravel_db","dbuser":"root","dbpassword":"password","mailport":"2525","mailusername":"6ee0bc9d9fa8cf","mailpassword":"1e623a02584045","mailfrom":"contact@laravel.com"},"layout":{"theme":"rider"},"auth":{"type":"blade","package":"laravel/fortify","redirect":"/","commpands":[],"isHomeProtected":true}}
+{
+    "models": [
+        {
+            "namespace": "App\\Models",
+            "name": "User",
+            "softDelete": false,
+            "attributes": {},
+            "relationships": [
+                {
+                    "name": "posts",
+                    "type": "hasMany",
+                    "class": "Post",
+                    "arguments": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "name",
+                    "type": "string",
+                    "htmlType": "text",
+                    "arguments": [],
+                    "options": []
+                },
+                {
+                    "name": "password",
+                    "type": "string",
+                    "htmlType": "password",
+                    "arguments": [],
+                    "options": []
+                },
+                {
+                    "name": "email",
+                    "type": "string",
+                    "htmlType": "email",
+                    "arguments": [],
+                    "options": [
+                        {
+                            "key": "unique",
+                            "arguments": []
+                        }
+                    ]
+                },
+                {
+                    "name": "",
+                    "type": "rememberToken",
+                    "arguments": [],
+                    "options": []
+                }
+            ],
+            "controller": {
+                "namespace": "App\\Http\\Controllers",
+                "actions": [
+                    {
+                        "name": "index",
+                        "method": "get",
+                        "route": {
+                            "middleware": [
+                                "auth:sanctum"
+                            ]
+                        },
+                        "params": [
+                            {
+                                "class": "Request",
+                                "namespace": "Illuminate\\Http\\Request",
+                                "name": "request"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "create",
+                        "method": "get",
+                        "route": {
+                            "middleware": [
+                                "auth:sanctum"
+                            ]
+                        },
+                        "params": []
+                    },
+                    {
+                        "name": "store",
+                        "method": "post",
+                        "route": {
+                            "middleware": [
+                                "auth:sanctum"
+                            ]
+                        },
+                        "params": [
+                            {
+                                "class": "StoreUserRequest",
+                                "namespace": "App\\Http\\Requests\\StoreUserRequest",
+                                "name": "request"
+                            }
+                        ],
+                        "request": {},
+                        "response": {}
+                    },
+                    {
+                        "name": "show",
+                        "method": "get",
+                        "route": {
+                            "middleware": [
+                                "auth:sanctum"
+                            ]
+                        },
+                        "params": [
+                            {
+                                "class": "User",
+                                "namespace": "App\\Models\\User",
+                                "name": "user"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "edit",
+                        "method": "get",
+                        "route": {
+                            "middleware": [
+                                "auth:sanctum"
+                            ]
+                        },
+                        "params": [
+                            {
+                                "class": "User",
+                                "namespace": "App\\Models\\User",
+                                "name": "user"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "update",
+                        "method": "put",
+                        "route": {
+                            "middleware": [
+                                "auth:sanctum"
+                            ]
+                        },
+                        "params": [
+                            {
+                                "class": "UpdateUserRequest",
+                                "namespace": "App\\Http\\Requests\\UpdateUserRequest",
+                                "name": "request"
+                            },
+                            {
+                                "class": "User",
+                                "namespace": "App\\Models\\User",
+                                "name": "user"
+                            }
+                        ],
+                        "request": {},
+                        "response": {}
+                    },
+                    {
+                        "name": "destroy",
+                        "method": "delete",
+                        "route": {
+                            "middleware": [
+                                "auth:sanctum"
+                            ]
+                        },
+                        "params": [
+                            {
+                                "class": "User",
+                                "namespace": "App\\Models\\User",
+                                "name": "user"
+                            }
+                        ],
+                        "request": {
+                            "rules": {}
+                        },
+                        "response": {}
+                    }
+                ]
+            }
+        },
+        {
+            "namespace": "App\\Models",
+            "name": "Post",
+            "softDelete": false,
+            "attributes": {},
+            "relationships": [
+                {
+                    "name": "author",
+                    "type": "belongsTo",
+                    "class": "User",
+                    "arguments": []
+                }
+            ],
+            "fields": [
+                {
+                    "name": "title",
+                    "type": "string",
+                    "htmlType": "text",
+                    "arguments": [],
+                    "options": []
+                },
+                {
+                    "name": "content",
+                    "type": "text",
+                    "htmlType": "textarea",
+                    "arguments": [],
+                    "options": []
+                },
+                {
+                    "name": "published",
+                    "type": "boolean",
+                    "htmlType": "switch",
+                    "arguments": [],
+                    "options": [
+                        {
+                            "key": "default",
+                            "arguments": [
+                                true
+                            ]
+                        }
+                    ]
+                },
+                {
+                    "name": "user_id",
+                    "type": "foreignId",
+                    "htmlType": "select",
+                    "arguments": [],
+                    "options": [
+                        {
+                            "key": "constrained",
+                            "arguments": []
+                        }
+                    ]
+                }
+            ],
+            "controller": {
+                "namespace": "App\\Http\\Controllers",
+                "actions": [
+                    {
+                        "name": "index",
+                        "method": "get",
+                        "route": {
+                            "middleware": [
+                                "auth:sanctum"
+                            ]
+                        },
+                        "params": [
+                            {
+                                "class": "Request",
+                                "namespace": "Illuminate\\Http\\Request",
+                                "name": "request"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "create",
+                        "method": "get",
+                        "route": {
+                            "middleware": [
+                                "auth:sanctum"
+                            ]
+                        },
+                        "params": []
+                    },
+                    {
+                        "name": "store",
+                        "method": "post",
+                        "route": {
+                            "middleware": [
+                                "auth:sanctum"
+                            ]
+                        },
+                        "params": [
+                            {
+                                "class": "StorePostRequest",
+                                "namespace": "App\\Http\\Requests\\StorePostRequest",
+                                "name": "request"
+                            }
+                        ],
+                        "request": {
+                            "rules": {}
+                        }
+                    },
+                    {
+                        "name": "show",
+                        "method": "get",
+                        "route": {
+                            "middleware": [
+                                "auth:sanctum"
+                            ]
+                        },
+                        "params": [
+                            {
+                                "class": "Post",
+                                "namespace": "App\\Models\\Post",
+                                "name": "post"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "edit",
+                        "method": "get",
+                        "route": {
+                            "middleware": [
+                                "auth:sanctum"
+                            ]
+                        },
+                        "params": [
+                            {
+                                "class": "Post",
+                                "namespace": "App\\Models\\Post",
+                                "name": "post"
+                            }
+                        ]
+                    },
+                    {
+                        "name": "update",
+                        "method": "put",
+                        "route": {
+                            "middleware": [
+                                "auth:sanctum"
+                            ]
+                        },
+                        "params": [
+                            {
+                                "class": "UpdatePostRequest",
+                                "namespace": "App\\Http\\Requests\\UpdatePostRequest",
+                                "name": "request"
+                            },
+                            {
+                                "class": "Post",
+                                "namespace": "App\\Models\\Post",
+                                "name": "post"
+                            }
+                        ],
+                        "request": {
+                            "rules": {}
+                        },
+                        "response": {}
+                    },
+                    {
+                        "name": "destroy",
+                        "method": "delete",
+                        "route": {
+                            "middleware": [
+                                "auth:sanctum"
+                            ]
+                        },
+                        "params": [
+                            {
+                                "class": "Post",
+                                "namespace": "App\\Models\\Post",
+                                "name": "post"
+                            }
+                        ],
+                        "request": {},
+                        "response": {}
+                    }
+                ]
+            }
+        }
+    ],
+    "env": {
+        "appname": "Laravel",
+        "dbname": "laravel_db",
+        "dbuser": "root",
+        "dbpassword": "password",
+        "mailport": "2525",
+        "mailusername": "6ee0bc9d9fa8cf",
+        "mailpassword": "1e623a02584045",
+        "mailfrom": "contact@laravel.com"
+    },
+    "layout": {
+        "theme": "rider"
+    },
+    "auth": {
+        "type": "blade",
+        "package": "laravel/fortify",
+        "redirect": "/",
+        "commpands": [],
+        "isHomeProtected": true
+    }
+}

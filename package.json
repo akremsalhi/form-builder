@@ -5,14 +5,12 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "zx": "^4.2.0",
     "lint": "next lint"
   },
   "dependencies": {
     "@chakra-ui/react": "^1.7.4",
     "@emotion/react": "^11",
     "@emotion/styled": "^11",
-    "@lowcode/laravel-gen": "^1.0.0",
     "@tailwindcss/forms": "^0.4.0",
     "flatpickr": "^4.6.9",
     "framer-motion": "^5",

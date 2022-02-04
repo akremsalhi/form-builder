@@ -1,1 +1,32 @@
-{"elements":[{"name":"name","type":"text","label":"Your name","required":true,"feedback":"Enter your name"},{"name":"email","label":"E-mail","feedback":"Enter your email","type":"email","required":true},{"name":"age","label":"Age","feedback":"Enter your age","type":"number","required":true},{"name":"birthdate","label":"Birthdate","feedback":"Enter your birthdate","type":"datepicker","required":false}]}
+{
+    "elements": [
+        {
+            "name": "name",
+            "type": "text",
+            "label": "Your name",
+            "required": true,
+            "feedback": "Enter your name"
+        },
+        {
+            "name": "email",
+            "label": "E-mail",
+            "feedback": "Enter your email",
+            "type": "email",
+            "required": true
+        },
+        {
+            "name": "age",
+            "label": "Age",
+            "feedback": "Enter your age",
+            "type": "number",
+            "required": true
+        },
+        {
+            "name": "birthdate",
+            "label": "Birthdate",
+            "feedback": "Enter your birthdate",
+            "type": "datepicker",
+            "required": false
+        }
+    ]
+}

@@ -1,7 +1,7 @@
 
 
 export const migrationTypes = [
-    
+
     'string',
     'text',
     'longText',
@@ -72,6 +72,7 @@ export const htmlTypes = [
     'text',
     'number',
     'email',
+    'textarea',
     'select',
     'password',
     'tel',
@@ -88,4 +89,20 @@ export const fieldDefault = {
     arguments: [],
     options: []
 }
+
+export const relationDefault = {
+    name: '',
+    type: '',
+    class: '',
+    arguments: []
+}
+
+export const relationships = [
+    { name: 'belongsTo', arguments: ['', ''] },
+    { name: 'hasOne', arguments: [''] },
+    { name: 'hasMany', arguments: ['', ''] },
+    { name: 'morphTo', arguments: [] },
+    { name: 'morphOne', arguments: [''] },
+    { name: 'morphMany', arguments: [''] },
+]
 
